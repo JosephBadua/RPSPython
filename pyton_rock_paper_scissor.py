@@ -6,13 +6,13 @@ win = 0
 lose = 0
 
 def display_options(tie, win, lose):
-    user_option = input("What would you like to do?\n(A) Reset your score and play again?\n(B) Play another round?\n(C) Quit Game")
+    user_option = input("What would you like to do?\n(A) Reset your score and play again?\n(B) Play another round?\n(C) Quit Game\n")
     if user_option.lower() == 'a':
         reset_score(tie, win, lose)
     elif user_option.lower() == 'b':
         play_game(tie, win, lose)
     elif user_option.lower() == 'c':
-        print("Here's a summar of your score. Thanks for playing.\nWins: "  + str(win) + "\nLosses: " + str(lose) + "\nTies: " + str(tie))
+        print("Here's a summary of your score. Thanks for playing.\nWins: "  + str(win) + "\nLosses: " + str(lose) + "\nTies: " + str(tie))
     else:
         print("Alright funny guy! I'm outta here")
 
@@ -24,7 +24,7 @@ def reset_score(tie, win, lose):
 def play_game(tie, win, lose):
     options = ['Rock', 'Paper', 'Scissors']
     cpu_selected = options[random.randint(0, 2)]
-    answer = input("Choose one: Rock, Paper, or Scissors")
+    answer = input("Choose one: Rock, Paper, or Scissors\n").lower().capitalize()
     
     if answer != 'Rock' and answer != 'Paper' and answer != 'Scissors':
         print("Hey! That's not one of the choices")
